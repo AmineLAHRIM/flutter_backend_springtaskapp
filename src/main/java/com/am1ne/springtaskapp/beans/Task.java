@@ -29,9 +29,7 @@ public class Task implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    private String address;
     private Date date;
-    private double price;
     private String imageUrl;
     private TaskStatus status;
     private String description;
@@ -72,13 +70,6 @@ public class Task implements Serializable {
         this.name = name;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
 
     public Date getDate() {
         return date;
@@ -94,14 +85,6 @@ public class Task implements Serializable {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     public String getDescription() {

@@ -41,8 +41,8 @@ public class UserServiceImpl implements UserService {
     public User findById(Long id) {
         Optional<User> getId = this.userDao.findById(id);
         if (getId.isPresent()) {
-            User currentUser=getId.get();
-            currentUser.loadDetail=true;
+            User currentUser = getId.get();
+            currentUser.loadDetail = true;
             currentUser.setTasks(this.userTaskDetailService.findAllByUser_Id(id));
             return currentUser;
         }
@@ -51,6 +51,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int save(User user) {
+
         if(this.userDao.findByEmail(user.getEmail())!=null){
             return -1;
         }else {
